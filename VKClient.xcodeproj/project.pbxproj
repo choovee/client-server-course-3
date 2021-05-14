@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		84085DB8264C3C3F004ED495 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84085DB7264C3C3F004ED495 /* AppDelegate.swift */; };
-		84085DBA264C3C3F004ED495 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84085DB9264C3C3F004ED495 /* ViewController.swift */; };
+		84085DBA264C3C3F004ED495 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84085DB9264C3C3F004ED495 /* LoginViewController.swift */; };
 		84085DBD264C3C3F004ED495 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84085DBB264C3C3F004ED495 /* Main.storyboard */; };
 		84085DBF264C3C40004ED495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84085DBE264C3C40004ED495 /* Assets.xcassets */; };
 		84085DC2264C3C40004ED495 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84085DC0264C3C40004ED495 /* LaunchScreen.storyboard */; };
+		84085DCB264C4561004ED495 /* VKSansMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84085DCA264C4561004ED495 /* VKSansMedium.ttf */; };
+		B4ABD49C264E54C300CB891F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD49B264E54C300CB891F /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84085DB4264C3C3F004ED495 /* VKClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84085DB7264C3C3F004ED495 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84085DB9264C3C3F004ED495 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84085DB9264C3C3F004ED495 /* LoginViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		84085DBC264C3C3F004ED495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84085DBE264C3C40004ED495 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84085DC1264C3C40004ED495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84085DC3264C3C40004ED495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84085DCA264C4561004ED495 /* VKSansMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VKSansMedium.ttf; sourceTree = "<group>"; };
+		B4ABD49B264E54C300CB891F /* RegistrationViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +59,23 @@
 			isa = PBXGroup;
 			children = (
 				84085DB7264C3C3F004ED495 /* AppDelegate.swift */,
-				84085DB9264C3C3F004ED495 /* ViewController.swift */,
+				84085DB9264C3C3F004ED495 /* LoginViewController.swift */,
+				B4ABD49B264E54C300CB891F /* RegistrationViewController.swift */,
 				84085DBB264C3C3F004ED495 /* Main.storyboard */,
 				84085DBE264C3C40004ED495 /* Assets.xcassets */,
 				84085DC0264C3C40004ED495 /* LaunchScreen.storyboard */,
 				84085DC3264C3C40004ED495 /* Info.plist */,
+				84085DC9264C4532004ED495 /* Fonts */,
 			);
 			path = VKClient;
+			sourceTree = "<group>";
+		};
+		84085DC9264C4532004ED495 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				84085DCA264C4561004ED495 /* VKSansMedium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,11 +105,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Sergey Deryabin";
 				TargetAttributes = {
 					84085DB3264C3C3F004ED495 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -123,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84085DC2264C3C40004ED495 /* LaunchScreen.storyboard in Resources */,
+				84085DCB264C4561004ED495 /* VKSansMedium.ttf in Resources */,
 				84085DBF264C3C40004ED495 /* Assets.xcassets in Resources */,
 				84085DBD264C3C3F004ED495 /* Main.storyboard in Resources */,
 			);
@@ -135,7 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84085DBA264C3C3F004ED495 /* ViewController.swift in Sources */,
+				B4ABD49C264E54C300CB891F /* RegistrationViewController.swift in Sources */,
+				84085DBA264C3C3F004ED495 /* LoginViewController.swift in Sources */,
 				84085DB8264C3C3F004ED495 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +205,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -249,6 +267,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -290,7 +309,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Sergey-Deryabin.VKClient";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -307,7 +326,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Sergey-Deryabin.VKClient";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
