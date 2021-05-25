@@ -14,6 +14,16 @@
 		84085DC2264C3C40004ED495 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84085DC0264C3C40004ED495 /* LaunchScreen.storyboard */; };
 		84085DCB264C4561004ED495 /* VKSansMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84085DCA264C4561004ED495 /* VKSansMedium.ttf */; };
 		B4ABD49C264E54C300CB891F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD49B264E54C300CB891F /* RegistrationViewController.swift */; };
+		B4B0FE202653FB1100E4E69B /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B0FE1F2653FB1100E4E69B /* Friends.storyboard */; };
+		B4B0FE222653FB2400E4E69B /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B0FE212653FB2400E4E69B /* Groups.storyboard */; };
+		B4B0FE292654053400E4E69B /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B0FE282654053400E4E69B /* FriendsViewController.swift */; };
+		B4B0FE2B2654054900E4E69B /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B0FE2A2654054900E4E69B /* GroupsViewController.swift */; };
+		B4B0FE2D2654076B00E4E69B /* FriendsPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B0FE2C2654076B00E4E69B /* FriendsPhotosViewController.swift */; };
+		B4B0FE2F2654094B00E4E69B /* GroupsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B0FE2E2654094B00E4E69B /* GroupsSearchViewController.swift */; };
+		B4B0FE31265640B200E4E69B /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B0FE30265640B200E4E69B /* FriendsTableViewCell.swift */; };
+		B4B0FE36265658AC00E4E69B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B0FE35265658AC00E4E69B /* User.swift */; };
+		B4B0FE38265B7A1E00E4E69B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B0FE37265B7A1E00E4E69B /* Group.swift */; };
+		B4B0FE3A265B804000E4E69B /* FriendsPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B0FE39265B804000E4E69B /* FriendsPhotosCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,16 @@
 		84085DC3264C3C40004ED495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84085DCA264C4561004ED495 /* VKSansMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VKSansMedium.ttf; sourceTree = "<group>"; };
 		B4ABD49B264E54C300CB891F /* RegistrationViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		B4B0FE1F2653FB1100E4E69B /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		B4B0FE212653FB2400E4E69B /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
+		B4B0FE282654053400E4E69B /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		B4B0FE2A2654054900E4E69B /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		B4B0FE2C2654076B00E4E69B /* FriendsPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotosViewController.swift; sourceTree = "<group>"; };
+		B4B0FE2E2654094B00E4E69B /* GroupsSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsSearchViewController.swift; sourceTree = "<group>"; };
+		B4B0FE30265640B200E4E69B /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		B4B0FE35265658AC00E4E69B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B4B0FE37265B7A1E00E4E69B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		B4B0FE39265B804000E4E69B /* FriendsPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				84085DB7264C3C3F004ED495 /* AppDelegate.swift */,
-				84085DB9264C3C3F004ED495 /* LoginViewController.swift */,
-				B4ABD49B264E54C300CB891F /* RegistrationViewController.swift */,
-				84085DBB264C3C3F004ED495 /* Main.storyboard */,
+				B4B0FE34265656D800E4E69B /* Model */,
+				B4B0FE272654043F00E4E69B /* ViewControllers */,
 				84085DBE264C3C40004ED495 /* Assets.xcassets */,
-				84085DC0264C3C40004ED495 /* LaunchScreen.storyboard */,
+				B4B0FE1E2653F1CB00E4E69B /* storyboards */,
 				84085DC3264C3C40004ED495 /* Info.plist */,
 				84085DC9264C4532004ED495 /* Fonts */,
 			);
@@ -76,6 +95,41 @@
 				84085DCA264C4561004ED495 /* VKSansMedium.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B4B0FE1E2653F1CB00E4E69B /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				84085DC0264C3C40004ED495 /* LaunchScreen.storyboard */,
+				84085DBB264C3C3F004ED495 /* Main.storyboard */,
+				B4B0FE1F2653FB1100E4E69B /* Friends.storyboard */,
+				B4B0FE212653FB2400E4E69B /* Groups.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		B4B0FE272654043F00E4E69B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B4ABD49B264E54C300CB891F /* RegistrationViewController.swift */,
+				84085DB9264C3C3F004ED495 /* LoginViewController.swift */,
+				B4B0FE282654053400E4E69B /* FriendsViewController.swift */,
+				B4B0FE2C2654076B00E4E69B /* FriendsPhotosViewController.swift */,
+				B4B0FE2A2654054900E4E69B /* GroupsViewController.swift */,
+				B4B0FE2E2654094B00E4E69B /* GroupsSearchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B4B0FE34265656D800E4E69B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4B0FE30265640B200E4E69B /* FriendsTableViewCell.swift */,
+				B4B0FE39265B804000E4E69B /* FriendsPhotosCollectionViewCell.swift */,
+				B4B0FE35265658AC00E4E69B /* User.swift */,
+				B4B0FE37265B7A1E00E4E69B /* Group.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +191,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4B0FE222653FB2400E4E69B /* Groups.storyboard in Resources */,
+				B4B0FE202653FB1100E4E69B /* Friends.storyboard in Resources */,
 				84085DC2264C3C40004ED495 /* LaunchScreen.storyboard in Resources */,
 				84085DCB264C4561004ED495 /* VKSansMedium.ttf in Resources */,
 				84085DBF264C3C40004ED495 /* Assets.xcassets in Resources */,
@@ -151,9 +207,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4B0FE3A265B804000E4E69B /* FriendsPhotosCollectionViewCell.swift in Sources */,
+				B4B0FE38265B7A1E00E4E69B /* Group.swift in Sources */,
+				B4B0FE2F2654094B00E4E69B /* GroupsSearchViewController.swift in Sources */,
+				B4B0FE292654053400E4E69B /* FriendsViewController.swift in Sources */,
+				B4B0FE2D2654076B00E4E69B /* FriendsPhotosViewController.swift in Sources */,
+				B4B0FE31265640B200E4E69B /* FriendsTableViewCell.swift in Sources */,
 				B4ABD49C264E54C300CB891F /* RegistrationViewController.swift in Sources */,
 				84085DBA264C3C3F004ED495 /* LoginViewController.swift in Sources */,
 				84085DB8264C3C3F004ED495 /* AppDelegate.swift in Sources */,
+				B4B0FE36265658AC00E4E69B /* User.swift in Sources */,
+				B4B0FE2B2654054900E4E69B /* GroupsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

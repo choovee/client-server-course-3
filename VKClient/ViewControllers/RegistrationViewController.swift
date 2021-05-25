@@ -9,31 +9,38 @@
 import UIKit
 
 final class RegistrationViewController: UIViewController {
-
+  
   @IBOutlet weak private var registrationButton: UIButton!
+  @IBOutlet weak var enterButton: UIButton!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     // Do any additional setup after loading the view.
   }
-    
-    
+  
+  
   @IBAction func pressRegistrationButton(_ sender: UIButton) {
     if let url = URL(string: "https://vk.com/"), UIApplication.shared.canOpenURL(url) {
       UIApplication.shared.open(url, options: [:])
     }
+    
   }
   
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      // Get the new view controller using segue.destination.
-      // Pass the selected object to the new view controller.
+  
+  @IBAction func pressEnterButton(_ sender: UIButton) {
+    performSegue(withIdentifier: "toLogin", sender: self.enterButton)
   }
-  */
-
+  
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destination.
+   // Pass the selected object to the new view controller.
+   }
+   */
+  
 }

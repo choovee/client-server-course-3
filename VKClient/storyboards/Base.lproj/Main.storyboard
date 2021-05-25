@@ -67,7 +67,7 @@
                                 <rect key="frame" x="103" y="154" width="169" height="35"/>
                                 <color key="backgroundColor" red="0.088454298183051047" green="0.68069982529999995" blue="0.40408027455290174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="169" id="BtE-Rw-H3Z"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="169" id="BtE-Rw-H3Z"/>
                                     <constraint firstAttribute="height" constant="35" id="OjQ-8m-PJb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
@@ -87,7 +87,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уже есть аккаунт?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqh-TS-ARb">
                                 <rect key="frame" x="125" y="286" width="124" height="11"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="124" id="CrQ-Bd-csz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="CrQ-Bd-csz"/>
                                     <constraint firstAttribute="height" constant="11" id="WYI-Ly-sBe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
@@ -99,7 +99,7 @@
                                 <color key="backgroundColor" red="0.33934313059999999" green="0.5161516666" blue="0.73745882510000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Rc7-6f-t9T"/>
-                                    <constraint firstAttribute="width" constant="169" id="TNh-Fd-J5V"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="169" id="TNh-Fd-J5V"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="Войти">
@@ -111,7 +111,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="wXy-wf-Uyn"/>
+                                    <action selector="pressEnterButton:" destination="UId-PM-U8Y" eventType="touchUpInside" id="PSF-Yx-bU9"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toLogin" id="sf7-1j-FVy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,6 +136,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="enterButton" destination="Rc1-ty-I1M" id="nZ6-7O-vOU"/>
                         <outlet property="registrationButton" destination="7nH-sq-4iW" id="jvB-6Z-BPb"/>
                     </connections>
                 </viewController>
@@ -252,11 +254,51 @@
                         <outlet property="passwordField" destination="EOa-oX-BaC" id="9Wt-cS-obR"/>
                         <outlet property="vkLogo" destination="d5c-PP-9x8" id="Gjf-mW-R3j"/>
                         <outlet property="vkLogoLabel" destination="p8E-71-aYr" id="nln-OV-Bdh"/>
+                        <segue destination="yNN-L5-rBw" kind="presentation" identifier="signIn" modalPresentationStyle="fullScreen" id="tLd-PF-Ts5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1719" y="80"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="YCc-SR-Bur">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBarID" id="yNN-L5-rBw" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="f8T-jq-LPH"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WLg-Pc-vfM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cg4-Wo-xmy" kind="relationship" relationship="viewControllers" id="e5d-g9-crc"/>
+                        <segue destination="1D0-9R-geI" kind="relationship" relationship="viewControllers" id="RlD-9y-cu2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPP-0i-AmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2682" y="80"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="LgO-RI-DZn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Friends" id="cg4-Wo-xmy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="FWE-nS-5Df"/>
+                    <navigationItem key="navigationItem" id="eqC-yh-pQi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="voT-5I-5bC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2443" y="534"/>
+        </scene>
+        <!--Groups-->
+        <scene sceneID="tbx-My-wwn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Groups" id="1D0-9R-geI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="P7I-Gj-Tzu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ia1-NJ-R0U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2920" y="534"/>
         </scene>
     </scenes>
     <resources>
