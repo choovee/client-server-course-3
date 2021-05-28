@@ -53,10 +53,10 @@ class FriendsViewController: UITableViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
-          
+
     if segue.identifier == "fromFriendToPhotos", let destination = segue.destination as? FriendsPhotosViewController {
       destination.user = selectedUser
-      
+
     }
   }
 }

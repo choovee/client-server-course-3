@@ -13,6 +13,8 @@
 		84085DBF264C3C40004ED495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84085DBE264C3C40004ED495 /* Assets.xcassets */; };
 		84085DC2264C3C40004ED495 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84085DC0264C3C40004ED495 /* LaunchScreen.storyboard */; };
 		84085DCB264C4561004ED495 /* VKSansMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84085DCA264C4561004ED495 /* VKSansMedium.ttf */; };
+		B41FC720265D14B10069CCC8 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FC71F265D14B10069CCC8 /* GroupsTableViewCell.swift */; };
+		B41FC72626610F2C0069CCC8 /* CustomAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FC72526610F2C0069CCC8 /* CustomAvatarView.swift */; };
 		B4ABD49C264E54C300CB891F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABD49B264E54C300CB891F /* RegistrationViewController.swift */; };
 		B4B0FE202653FB1100E4E69B /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B0FE1F2653FB1100E4E69B /* Friends.storyboard */; };
 		B4B0FE222653FB2400E4E69B /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B0FE212653FB2400E4E69B /* Groups.storyboard */; };
@@ -35,6 +37,8 @@
 		84085DC1264C3C40004ED495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84085DC3264C3C40004ED495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84085DCA264C4561004ED495 /* VKSansMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VKSansMedium.ttf; sourceTree = "<group>"; };
+		B41FC71F265D14B10069CCC8 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupsTableViewCell.swift; path = VKClient/Model/GroupsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		B41FC72526610F2C0069CCC8 /* CustomAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAvatarView.swift; sourceTree = "<group>"; };
 		B4ABD49B264E54C300CB891F /* RegistrationViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B4B0FE1F2653FB1100E4E69B /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		B4B0FE212653FB2400E4E69B /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				84085DB7264C3C3F004ED495 /* AppDelegate.swift */,
+				B41FC72526610F2C0069CCC8 /* CustomAvatarView.swift */,
 				B4B0FE34265656D800E4E69B /* Model */,
 				B4B0FE272654043F00E4E69B /* ViewControllers */,
 				84085DBE264C3C40004ED495 /* Assets.xcassets */,
@@ -97,6 +102,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B41FC7212660DBBD0069CCC8 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				B4B0FE282654053400E4E69B /* FriendsViewController.swift */,
+				B4B0FE2C2654076B00E4E69B /* FriendsPhotosViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		B41FC7222660DBCB0069CCC8 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				B4B0FE2A2654054900E4E69B /* GroupsViewController.swift */,
+				B4B0FE2E2654094B00E4E69B /* GroupsSearchViewController.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
 		B4B0FE1E2653F1CB00E4E69B /* storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,10 +136,8 @@
 			children = (
 				B4ABD49B264E54C300CB891F /* RegistrationViewController.swift */,
 				84085DB9264C3C3F004ED495 /* LoginViewController.swift */,
-				B4B0FE282654053400E4E69B /* FriendsViewController.swift */,
-				B4B0FE2C2654076B00E4E69B /* FriendsPhotosViewController.swift */,
-				B4B0FE2A2654054900E4E69B /* GroupsViewController.swift */,
-				B4B0FE2E2654094B00E4E69B /* GroupsSearchViewController.swift */,
+				B41FC7212660DBBD0069CCC8 /* Friends */,
+				B41FC7222660DBCB0069CCC8 /* Groups */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -124,10 +145,11 @@
 		B4B0FE34265656D800E4E69B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B4B0FE30265640B200E4E69B /* FriendsTableViewCell.swift */,
-				B4B0FE39265B804000E4E69B /* FriendsPhotosCollectionViewCell.swift */,
 				B4B0FE35265658AC00E4E69B /* User.swift */,
 				B4B0FE37265B7A1E00E4E69B /* Group.swift */,
+				B41FC71F265D14B10069CCC8 /* GroupsTableViewCell.swift */,
+				B4B0FE30265640B200E4E69B /* FriendsTableViewCell.swift */,
+				B4B0FE39265B804000E4E69B /* FriendsPhotosCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,7 +235,9 @@
 				B4B0FE292654053400E4E69B /* FriendsViewController.swift in Sources */,
 				B4B0FE2D2654076B00E4E69B /* FriendsPhotosViewController.swift in Sources */,
 				B4B0FE31265640B200E4E69B /* FriendsTableViewCell.swift in Sources */,
+				B41FC72626610F2C0069CCC8 /* CustomAvatarView.swift in Sources */,
 				B4ABD49C264E54C300CB891F /* RegistrationViewController.swift in Sources */,
+				B41FC720265D14B10069CCC8 /* GroupsTableViewCell.swift in Sources */,
 				84085DBA264C3C3F004ED495 /* LoginViewController.swift in Sources */,
 				84085DB8264C3C3F004ED495 /* AppDelegate.swift in Sources */,
 				B4B0FE36265658AC00E4E69B /* User.swift in Sources */,

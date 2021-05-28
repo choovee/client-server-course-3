@@ -11,6 +11,7 @@ import UIKit
 class FriendsTableViewCell: UITableViewCell {
   
   @IBOutlet weak var friendAvatarImage: UIImageView!
+  @IBOutlet weak var customAvatarView: CustomAvatarView!
   @IBOutlet weak var friendNameLabel: UILabel!
   
   
@@ -28,6 +29,8 @@ class FriendsTableViewCell: UITableViewCell {
   func configureCell(object: User) {
     friendAvatarImage.image = object.avatar
     friendNameLabel.text = object.name
+  
+    customAvatarView.setupAvatarView(friendAvatarImage)
   }
   
   
@@ -35,6 +38,6 @@ class FriendsTableViewCell: UITableViewCell {
     super.awakeFromNib()
     // Initialization code
   }
-  
+
   
 }
