@@ -9,7 +9,7 @@
 import UIKit
 
 struct Group {
-  var name: String?
+  var name: String
   var avatar: UIImage?
   var description: String?
 }

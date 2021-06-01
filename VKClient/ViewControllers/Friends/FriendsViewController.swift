@@ -12,17 +12,13 @@ class FriendsViewController: UITableViewController {
   
   private let cellReuseIdentifier = "friendsCell"
   
-  private var arrayOfFriends = [User]()
-
   private var selectedUser: User?
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    addData()
   }
-  
   
   
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,21 +27,21 @@ class FriendsViewController: UITableViewController {
   
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return arrayOfFriends.count
+    return DataStorage.shared.allUsers.count
   }
   
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as!  FriendsTableViewCell
     
-    cell.configureCell(object: arrayOfFriends[indexPath.row])
+    cell.configureCell(object: DataStorage.shared.allUsers[indexPath.row])
     
     return cell
   }
   
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    selectedUser = arrayOfFriends[indexPath.row]
+    selectedUser = DataStorage.shared.allUsers[indexPath.row]
     
     performSegue(withIdentifier: "fromFriendToPhotos", sender: self)
   }
@@ -58,16 +54,5 @@ class FriendsViewController: UITableViewController {
       destination.user = selectedUser
 
     }
-  }
-}
-
-
-extension FriendsViewController {
-  private func addData() {
-    arrayOfFriends.append(User(avatar: UIImage(named: "cosmos1"), name: "Cosmos", photosArray: [UIImage(imageLiteralResourceName: "cosmos1"), UIImage(imageLiteralResourceName: "cosmos2"), UIImage(imageLiteralResourceName: "cosmos3"), UIImage(imageLiteralResourceName: "cosmos4"), UIImage(imageLiteralResourceName: "cosmos5")]))
-    arrayOfFriends.append(User(avatar: UIImage(named: "desert4"), name: "Desert", photosArray: [UIImage(imageLiteralResourceName: "desert1"), UIImage(imageLiteralResourceName: "desert2"), UIImage(imageLiteralResourceName: "desert3"), UIImage(imageLiteralResourceName: "desert4"), UIImage(imageLiteralResourceName: "desert5")]))
-
-    
-    tableView.reloadData()
   }
 }

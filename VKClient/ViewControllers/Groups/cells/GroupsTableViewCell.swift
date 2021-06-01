@@ -12,10 +12,12 @@ class GroupsTableViewCell: UITableViewCell {
   
   @IBOutlet weak var groupAvatar: UIImageView!
   @IBOutlet weak var groupName: UILabel!
+  @IBOutlet weak var groupDescription: UILabel!
   
   func clearAll() {
     groupName.text = nil
     groupAvatar.image = nil
+    groupDescription.text = nil
   }
   
   override func prepareForReuse() {
@@ -27,6 +29,7 @@ class GroupsTableViewCell: UITableViewCell {
   func configure(object: Group) {
     groupName.text = object.name
     groupAvatar.image = object.avatar
+    groupDescription.text = object.description
   }
   
   override func awakeFromNib() {

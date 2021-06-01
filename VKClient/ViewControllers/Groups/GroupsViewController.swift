@@ -12,12 +12,17 @@ class GroupsViewController: UITableViewController {
   
   let cellReuseIdentifier = "groupsCell"
   
-  var arrayOfGroups = [Group]()
+//  var arrayOfGroups = [Group]()
+  
+  override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
+    
+      self.tableView.reloadData()
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    addData()
   }
   
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,28 +31,29 @@ class GroupsViewController: UITableViewController {
   
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return arrayOfGroups.count
+    return DataStorage.shared.myGroups.count
   }
   
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! GroupsTableViewCell
     
-    cell.configure(object: arrayOfGroups[indexPath.row])
+    cell.configure(object: DataStorage.shared.myGroups[indexPath.row])
     
     return cell
   }
   
-  
-}
-
-extension GroupsViewController {
-  
-  func addData() {
-    arrayOfGroups.append(Group(name: "Nasa", avatar: UIImage(named: "nasa"), description: nil))
-    arrayOfGroups.append(Group(name: "Roscosmos", avatar: UIImage(named: "roscosmos"), description: nil))
-    
-    tableView.reloadData()
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+      return 50.0
   }
+  
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+  
+      DataStorage.shared.myGroups.remove(at: indexPath.row)
+      self.tableView.reloadData()
+  
+  
+  }
+  
   
 }
