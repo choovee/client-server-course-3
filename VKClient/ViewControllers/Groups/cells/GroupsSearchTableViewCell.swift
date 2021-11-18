@@ -13,15 +13,11 @@ class GroupsSearchTableViewCell: UITableViewCell {
   @IBOutlet weak var groupAvatar: UIImageView!
   @IBOutlet weak var groupName: UILabel!
   @IBOutlet weak var groupDescription: UILabel!
-  
-  var addGroup: Group?
-  
+    
   func clearAll() {
     groupName.text = nil
     groupAvatar.image = nil
     groupDescription.text = nil
-    
-    addGroup = nil
   }
   
   override func prepareForReuse() {
@@ -34,8 +30,6 @@ class GroupsSearchTableViewCell: UITableViewCell {
     groupName.text = object.name
     groupAvatar.image = object.avatar
     groupDescription.text = object.description
-    
-    addGroup = object
   }
   
   

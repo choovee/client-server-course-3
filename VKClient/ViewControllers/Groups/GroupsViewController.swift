@@ -8,52 +8,74 @@
 
 import UIKit
 
-class GroupsViewController: UITableViewController {
+protocol GroupsDelegate: AnyObject {
+  func groupDidSelect(_ group: Group)
+}
+
+class GroupsViewController: UIViewController {
+    
+  @IBOutlet weak var searchBar: UISearchBar!
+  @IBOutlet weak var myTableView: UITableView!
   
-  let cellReuseIdentifier = "groupsCell"
-  
-//  var arrayOfGroups = [Group]()
+  let reuseIdentifierGroupsCell = "reuseIdentifierGroupsCell"
+  var filteredArray = [Group]()//DataStorage.shared.myGroups
   
   override func viewDidAppear(_ animated: Bool) {
-      super.viewDidAppear(animated)
-    
-      self.tableView.reloadData()
+    super.viewDidAppear(animated)
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.title = "Мои группы"
+    
+    myTableView.register(UINib(nibName: "GroupsTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierGroupsCell)
   }
   
-  override func numberOfSections(in tableView: UITableView) -> Int {
+}
+
+
+extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
   
   
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return DataStorage.shared.myGroups.count
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return filteredArray.count
   }
   
   
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! GroupsTableViewCell
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierGroupsCell, for: indexPath) as? GroupsTableViewCell else { return UITableViewCell() }
     
-    cell.configure(object: DataStorage.shared.myGroups[indexPath.row])
+    cell.configure(object: filteredArray[indexPath.row])
     
     return cell
   }
   
-  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return 50.0
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 50.0
   }
   
-  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
   
-      DataStorage.shared.myGroups.remove(at: indexPath.row)
-      self.tableView.reloadData()
+//  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//    filteredArray.remove(at: indexPath.row)
+//
+//    myTableView.reloadData()
+//  }
   
+}
+
+
+extension GroupsViewController: GroupsDelegate {
   
+  func groupDidSelect(_ group: Group) {
+    if !filteredArray.contains(group) {
+      filteredArray.append(group)
+      myTableView.reloadData()
+    }
   }
-  
   
 }

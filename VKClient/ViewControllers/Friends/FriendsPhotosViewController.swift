@@ -18,7 +18,8 @@ class FriendsPhotosViewController: UICollectionViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+   
+    self.title = "Фото"
   }
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {

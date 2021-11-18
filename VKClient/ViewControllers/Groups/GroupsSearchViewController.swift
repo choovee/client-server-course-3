@@ -11,14 +11,21 @@ import UIKit
 class GroupsSearchViewController: UITableViewController {
   
   let searchGroupsCell = "searchGroupsCell"
+  weak var delegate: GroupsDelegate?
+  var filteredArray = DataStorage.shared.allGroups
+  
+  @IBOutlet weak var searchBar: UISearchBar!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    self.title = "Все группы"
   }
   
   
   // MARK: - Table view data source
+  
   
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -26,14 +33,14 @@ class GroupsSearchViewController: UITableViewController {
   
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return DataStorage.shared.allGroups.count
+    return filteredArray.count
   }
   
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: searchGroupsCell, for: indexPath) as? GroupsSearchTableViewCell else { return UITableViewCell() }
 
-    cell.configure(object: DataStorage.shared.allGroups[indexPath.row])
+    cell.configure(object: filteredArray[indexPath.row])
 
     return cell
   }
@@ -45,21 +52,8 @@ class GroupsSearchViewController: UITableViewController {
   
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
-    guard let cell = tableView.cellForRow(at: indexPath) as? GroupsSearchTableViewCell, let group = cell.addGroup else { return }
-    
-    var isEnableItem = false
-    
-    for item in DataStorage.shared.myGroups {
-      if item.name == group.name {
-        isEnableItem = true
-      }
-    }
-    
-    if !isEnableItem {
-      DataStorage.shared.myGroups.append(group)
-    }
+    let group = filteredArray[indexPath.row]
+    delegate?.groupDidSelect(group)
+    navigationController?.popViewController(animated: true)
   }
-   
-
 }

@@ -10,14 +10,15 @@ import UIKit
 
 class DataStorage: NSObject {
   
-    static let shared = DataStorage()
+  static let shared = DataStorage()
+
+  private override init() {
+    super.init()
+  }
   
-    private override init() {
-        super.init()
-    }
-    
-    var allUsers = [User]()
-    var allGroups = [Group]()
-    var myGroups = [Group]()
-  
+  var allUsers = [User]()
+  var allGroups = [Group]()
+  var myGroups = [Group]()
+  var allNews = [News]()
+
 }
