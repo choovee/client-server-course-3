@@ -56,4 +56,5 @@ class GroupsSearchViewController: UITableViewController {
     delegate?.groupDidSelect(group)
     navigationController?.popViewController(animated: true)
   }
+
 }

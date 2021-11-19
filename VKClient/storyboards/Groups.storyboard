@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4L2-57-k3i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4L2-57-k3i">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,7 +66,7 @@
                     <navigationItem key="navigationItem" id="uAT-5r-6qd">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="RaF-RH-lKK">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2RQ-YU-O6S">
-                                <rect key="frame" x="317" y="11" width="77" height="22"/>
+                                <rect key="frame" x="316.5" y="11" width="77.5" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search" image="magnifyingglass" catalog="system">
                                     <color key="titleColor" systemColor="linkColor"/>
@@ -79,7 +79,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="myTableView" destination="WAs-qf-q7K" id="ZWv-ST-hyu"/>
+                        <outlet property="myTableView" destination="WAs-qf-q7K" id="GRx-71-8wY"/>
                         <outlet property="searchBar" destination="851-GV-2aJ" id="d0O-Xd-guu"/>
                     </connections>
                 </viewController>
@@ -105,7 +105,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchGroupsCell" rowHeight="50" id="4Xp-bJ-WCS" customClass="GroupsSearchTableViewCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="68.5" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Xp-bJ-WCS" id="Gik-L0-52I">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -168,7 +168,7 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="textformat.size.smaller.ko" catalog="system" width="128" height="110"/>
+        <image name="textformat.size.smaller.ko" catalog="system" width="128" height="123"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -18,7 +18,7 @@ class GroupsViewController: UIViewController {
   @IBOutlet weak var myTableView: UITableView!
   
   let reuseIdentifierGroupsCell = "reuseIdentifierGroupsCell"
-  var filteredArray = [Group]()//DataStorage.shared.myGroups
+  var filteredArray = DataStorage.shared.myGroups
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
@@ -59,12 +59,18 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
     return 50.0
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "toMyGroups" {
+      let ctrl = segue.destination as! GroupsSearchViewController
+      ctrl.delegate = self
+    }
+  }
   
-//  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//    filteredArray.remove(at: indexPath.row)
-//
-//    myTableView.reloadData()
-//  }
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    filteredArray.remove(at: indexPath.row)
+
+    myTableView.reloadData()
+  }
   
 }
 

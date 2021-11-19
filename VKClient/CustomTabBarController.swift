@@ -38,6 +38,7 @@ class CustomTabBarController: UITabBarController {
     DataStorage.shared.allUsers = usersArray
     DataStorage.shared.allGroups = groupsArray
     DataStorage.shared.allNews = newsArray
+    DataStorage.shared.myGroups = groupsArray
   }
 
 }
